@@ -1,16 +1,16 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
-  // Project configuration.
+  // Project configuration
   grunt.initConfig({
-    // Metadata.
+    // Metadata
     pkg: grunt.file.readJSON('package.json'),
     banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
       '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' Licensed <%= _.pluck(pkg.license, "type").join(", ") %> */\n',
-    // Task configuration.
+    // Task configuration
     sass: {
       dist: {
         files: [{
@@ -69,25 +69,16 @@ module.exports = function(grunt) {
         }
       },
     }
-    // notify_hooks: {
 
-    //   options: {
-    //     enabled: true,
-    //     max_jshint_notifications: 5, // maximum number of notifications from jshint output
-    //     title: "Project Name", // defaults to the name in package.json, or will use project directory's name
-    //     success: false, // whether successful grunt executions should be notified automatically
-    //     duration: 3 // the duration of notification in seconds, for `notify-send only
-    //   }
-    // }
   });
 
-
+  // Load Nom dep
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-notify');
 
-  // Default task.
+  // Tasks
   //grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
 
 };

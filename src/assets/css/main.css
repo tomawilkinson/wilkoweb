@@ -5813,7 +5813,9 @@ button.close {
  * Thomas Wilkinson
  * http://www.tom-wilkinson.com
  */
-body {
-  background: blue; }
+.inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px; }
 
 /*# sourceMappingURL=main.css.map */
