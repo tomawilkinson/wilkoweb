@@ -22,11 +22,28 @@ module.exports = function(grunt) {
         }]
       }
     },
-
+    uglify: {
+      my_target: {
+        files: {
+          'src/assets/js/main.js':
+            [
+              'src/assets/js/scripts/function1.js',
+              'src/assets/js/scripts/function2.js'
+            ]
+        }
+      }
+    },
     watch: {
       scss: {
         files: ['src/assets/css/scss/**/*.scss'],
         tasks: ['sass'],
+        options: {
+          spawn: false,
+        },
+      },
+      js: {
+        files: ['src/assets/js/scripts/**/*.js'],
+        tasks: ['uglify'],
         options: {
           spawn: false,
         },
@@ -38,6 +55,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // Default task.
   //grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
