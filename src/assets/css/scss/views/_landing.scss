@@ -1,12 +1,16 @@
+.available-date {
+  margin-top: 0;
+}
+
 #skills {
   ul {
     margin: 0;
-    padding: 0;
+    padding-left: 0;
     li {
       display: inline-block;
       background: $grey;
       padding: 0px 14px;
-      margin: 5px;
+      margin: 8px 5px;
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
       border-radius: 5px;
@@ -16,12 +20,26 @@
 
 #recent-projects, #get-in-touch {
   ul {
+    padding-left: 30px;
     label {
-      font-size: 23px;
-      font-weight: 100;
+      font-size: 22px;
+      font-weight: 300;
     }
     li {
+      list-style-type: circle;
       margin: 0 0 15px 0;
     }
+  }
+}
+
+@media (max-width: 625px) {
+  body {
+    border-width: 10px;
+  }
+}
+
+@media (max-width: 375px) {
+  h1 {
+    font-size: 45px;
   }
 }
